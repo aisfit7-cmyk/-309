@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Анкета — Незнакомцы из ада</title>
+
+    <link rel="stylesheet" href="css/style.min.css">
+</head>
+
+<body>
+
+<header>
+    <div class="container">
+        <h1 class="logo">STRANGERS FROM HELL</h1>
+
+        <nav>
+            <a href="index.html">Главная</a>
+            <a href="gallery.html">Галерея</a>
+            <a href="form.html">Анкета</a>
+        </nav>
+    </div>
+</header>
+
+<main class="content">
+
+    <h2>Регистрация</h2>
+
+    <p class="description">
+        Хотите попасть в общежитие «Эдем»?
+        Заполните анкету и расскажите немного о себе.
+    </p>
+
+    <form id="registrationForm"
+          action="#"
+          method="post"
+          enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>Личные данные</legend>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="surname">Фамилия</label>
+
+                    <input type="text"
+                           id="surname"
+                           name="surname"
+                           placeholder="Введите фамилию"
+                           minlength="2"
+                           maxlength="30"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Имя</label>
+
+                    <input type="text"
+                           id="name"
+                           name="name"
+                           placeholder="Введите имя"
+                           minlength="2"
+                           maxlength="30"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="birth">Дата рождения</label>
+
+                    <input type="date"
+                           id="birth"
+                           name="birth"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Возраст</label>
+
+                    <input type="number"
+                           id="age"
+                           name="age"
+                           min="10"
+                           max="100"
+                           placeholder="Ваш возраст"
+                           required>
+                </div>
+
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Контактная информация</legend>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="email">Электронная почта</label>
+
+                    <input type="email"
+                           id="email"
+                           name="email"
+                           placeholder="example@mail.com"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон</label>
+
+                    <input type="tel"
+                           id="phone"
+                           name="phone"
+                           placeholder="+77001234567"
+                           pattern="[+]?[0-9]{10,15}"
+                           title="Введите номер из 10–15 цифр, знак + в начале необязателен"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="country">Страна</label>
+
+                    <select id="country"
+                            name="country"
+                            required>
+
+                        <option value="">Выберите страну</option>
+                        <option value="Казахстан">Казахстан</option>
+                        <option value="Россия">Россия</option>
+                        <option value="Южная Корея">Южная Корея</option>
+                        <option value="Узбекистан">Узбекистан</option>
+                        <option value="Другая страна">Другая страна</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">Город</label>
+
+                    <input type="text"
+                           id="city"
+                           name="city"
+                           placeholder="Ваш город"
+                           minlength="2"
+                           maxlength="50"
+                           required>
+                </div>
+
+            </div>
+        </fieldset>
+
+
+        <fieldset>
+            <legend>Данные аккаунта</legend>
+
+            <div class="form-grid">
+
+                <div class="form-group">
+                    <label for="password">Пароль</label>
+
+                    <input type="password"
+                           id="password"
+                           name="password"
+                           placeholder="Минимум 6 символов"
+                           minlength="6"
+                           maxlength="30"
+                           required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password2">Повторите пароль</label>
+
+                    <input type="password"
+                           id="password2"
+                           name="password2"
+                           placeholder="Повторите пароль"
+                           minlength="6"
+                           maxlength="30"
+                           required>
+
+            </div>
+        </fieldset>
+
+   
+        <fieldset>
+            <legend>Фотографии</legend>
+
+            <div class="form-group">
+
+                <label for="photos">
+                    Загрузите фотографии
+                </label>
+
+                <input type="file"
+                       id="photos"
+                       name="photos"
+                       accept="image/jpeg,image/png,image/webp"
+                       multiple
+                       aria-describedby="photoHelp">
+
+
+                <div id="preview" class="image-preview"></div>
+
+                <p id="fileError" class="error-message"
+                   aria-live="polite"></p>
+
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Анкета поклонника</legend>
+
+            <div class="form-group">
+
+                <label for="character">
+                    Любимый персонаж
+                </label>
+
+                <select id="character"
+                        name="character"
+                        required>
+
+                    <option value="">Выберите персонажа</option>
+                    <option value="Юн Джон У">Юн Джон У</option>
+                    <option value="Со Мун Джо">Со Мун Джо</option>
+                    <option value="Ом Бок Сун">Ом Бок Сун</option>
+                    <option value="Другой персонаж">Другой персонаж</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="genre">
+                    Любимый жанр
+                </label>
+
+                <select id="genre"
+                        name="genre"
+                        required>
+
+                    <option value="">Выберите жанр</option>
+                    <option value="Триллер">Триллер</option>
+                    <option value="Ужасы">Ужасы</option>
+                    <option value="Детектив">Детектив</option>
+                    <option value="Драма">Драма</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <p>Понравилась ли вам дорама?</p>
+
+                <label>
+                    <input type="radio"
+                           name="rating"
+                           value="yes"
+                           required>
+                    Да
+                </label>
+
+                <label>
+                    <input type="radio"
+                           name="rating"
+                           value="no">
+                    Нет
+                </label>
+
+            </div>
+
+            <div class="form-group">
+
+                <p>Что вам понравилось?</p>
+
+                <label>
+                    <input type="checkbox"
+                           name="choice"
+                           value="characters">
+                    Персонажи
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="choice"
+                           value="story">
+                    Сюжет
+                </label>
+
+                <label>
+                    <input type="checkbox"
+                           name="choice"
+                           value="atmosphere">
+                    Атмосфера
+                </label>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="comment">
+                    Ваш комментарий
+                </label>
+
+                <textarea id="comment"
+                          name="comment"
+                          rows="5"
+                          maxlength="500"
+                          placeholder="Напишите своё мнение о дораме (до 500 символов)"></textarea>
+
+            </div>
+
+        </fieldset>
+
+        <div class="agreement">
+
+            <label>
+                <input type="checkbox"
+                       name="agreement"
+                       id="agreement"
+                       required>
+
+                Я согласен(на) с правилами сайта
+                и обработкой персональных данных.
+            </label>
+
+        </div>
+
+
+        <!-- КНОПКИ -->
+
+        <button type="submit" class="button">
+            Зарегистрироваться
+        </button>
+
+        <button type="reset" class="reset-button">
+            Очистить форму
+        </button>
+
+        <p id="successMessage"
+           class="success-message"
+           aria-live="polite"></p>
+
+    </form>
+
+</main>
+
+
+<footer>
+    <p>© 2026 Незнакомцы из ада</p>
+</footer>
+
+<script src="js/validation.js" defer></script>
+<script src="js/images.js" defer></script>
+
+</body>
+</html>
